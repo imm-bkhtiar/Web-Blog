@@ -1,6 +1,14 @@
 :root {
+  --colorPrimary0-25: rgba(211, 211, 211, 0.25);
+  --colorPrimary: rgba(210, 210, 210, 1);
+  --colorSecondary: rgba(85, 85, 85, 1);
+  --textColorSecondary: white;
+  --textColor: black;
   --border: 2px solid black;
 }
+
+/* ------------------ */
+/* Nav start  */
 
 .nav {
   display: grid;
@@ -20,14 +28,18 @@
 }
 
 .nav > .menu > * {
-  color: black;
+  color: var(--textColor);
   text-decoration: none;
   font-weight: bold;
 }
 
+/* Nav end */
+/* ------------------- */
+/* Space start */
+
 .space {
   width: 100%;
-  background-color: lightgray;
+  background-color: var(--colorPrimary);
   text-align: center;
   padding-block: 3rem;
 }
@@ -35,6 +47,10 @@
 .space h1 {
   letter-spacing: 0.1rem;
 }
+
+/* Space end */
+/* ---------------------- */
+/* Content start */
 
 .container {
   padding: 6rem 8rem 4rem 8rem;
@@ -69,7 +85,7 @@
   width: 100%;
   height: 220px;
   display: block;
-  background-color: gray;
+  background-color: var(--colorSecondary);
   border-radius: 5px 5px 0 0;
   object-fit: cover;
 }
@@ -86,7 +102,7 @@
 }
 
 .side > .category {
-  background-color: rgba(207, 207, 207, 0.25);
+  background-color: var(--colorPrimary0-25);
   padding: 2.5rem;
 }
 
@@ -101,7 +117,7 @@
 .side > .category > .menu > * {
   display: block;
   padding-block: 1rem;
-  color: black;
+  color: var(--textColor);
   text-decoration: none;
   letter-spacing: 0.05rem;
   border-bottom: 2px solid rgba(0, 0, 0, 0.25);
@@ -109,6 +125,18 @@
 
 .side > form {
   width: 100%;
+}
+
+.side > form > label {
+  position: relative;
+}
+
+.side > form > label > span > img {
+  position: absolute;
+  width: 25px;
+  aspect-ratio: 1/1;
+  right: 1rem;
+  transform: translateY(0.35rem);
 }
 
 .side > form > label > input {
@@ -121,7 +149,7 @@
   display: grid;
   gap: 1.5rem;
   padding: 2.5rem;
-  background-color: rgba(207, 207, 207, 0.25);
+  background-color: var(--colorPrimary0-25);
 }
 
 .side > .topPost > .content {
@@ -156,10 +184,14 @@
 
 .side > .gallery img {
   display: block;
-  background-color: gray;
+  background-color: var(--colorPrimary);
   aspect-ratio: 1/1;
   object-fit: cover;
 }
+
+/* Content end */
+/* ---------------------- */
+/* Pagination start */
 
 .pagination {
   padding: 0.5rem;
@@ -173,26 +205,30 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: black;
+  color: var(--textColor);
   width: 1.5rem;
   height: 1.5rem;
   text-decoration: none;
   padding: 0.25rem;
-  background-color: rgba(211, 211, 211, 0.5);
+  background-color: var(--colorPrimary0-25);
 }
 
 .pagination > a:first-child {
-  color: white;
-  background-color: rgb(74, 74, 74);
+  color: var(--textColorSecondary);
+  background-color: var(--colorSecondary);
 }
+
+/* Pagination end */
+/* -------------------------- */
+/* Footer start */
 
 .footer {
   margin-block-start: 6rem;
-  background-color: gray;
+  background-color: var(--colorSecondary);
   padding: 4rem;
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
-  color: white;
+  color: var(--textColorSecondary);
 }
 
 .footer .brand {
@@ -226,8 +262,8 @@
   gap: 1rem;
 }
 
-.footer > .post > .content .wrapper img,
-.footer > .contact > .emailContact > .socialMedia img {
+.footer > .post > .content img,
+.footer > .contact > .wrapper > .socialMedia img {
   display: inline-block;
   width: 20px;
   height: 20px;
@@ -240,12 +276,12 @@
   gap: 2rem;
 }
 
-.footer > .contact > .emailContact {
+.footer > .contact > .wrapper {
   display: grid;
   gap: 1rem;
 }
 
-.footer > .contact > .emailContact > .socialMedia {
+.footer > .contact > .wrapper > .socialMedia {
   display: flex;
   gap: 0.5rem;
 }
@@ -253,3 +289,5 @@
 .footer > .contact {
   font-size: 75%;
 }
+
+/* Footer end */
