@@ -33,6 +33,10 @@
   font-weight: bold;
 }
 
+.nav > .container {
+  display: none;
+}
+
 /* Nav end */
 /* ------------------- */
 /* Space start */

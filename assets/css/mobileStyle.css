@@ -1,0 +1,364 @@
+@media only screen and (max-width: 640px) {
+  :root {
+    font-size: 75%;
+  }
+
+  /* ------------------ */
+  /* Nav start  */
+
+  .nav {
+    display: grid;
+    grid-template-columns: auto;
+    grid-auto-flow: row;
+    padding: 3rem 1rem;
+    gap: 2rem;
+  }
+
+  .nav h2 {
+    padding: 1rem 3rem;
+    letter-spacing: 0.25rem;
+    font-weight: bolder;
+  }
+
+  .nav > .container {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    height: auto;
+    gap: 1rem;
+  }
+
+  .nav > .container > .menu,
+  .nav > .container > .category {
+    display: grid;
+    gap: 2rem;
+    place-items: center;
+    width: 80%;
+  }
+
+  .nav > .container .list {
+    width: 100%;
+    display: grid;
+    gap: 1rem;
+    text-align: start;
+    transform-origin: top center;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 200ms;
+  }
+
+  .nav > .container a,
+  .nav > .container p,
+  .nav > .container p span {
+    color: var(--textColor);
+    text-decoration: none;
+    font-weight: normal;
+    letter-spacing: 0.15rem;
+    padding: 0.75rem;
+    transition: all 200ms;
+  }
+
+  .nav > .container p {
+    font-weight: bold;
+    position: relative;
+    width: 100%;
+  }
+
+  .nav > .container p span {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: inline-block;
+    transform: rotate(90deg);
+    right: 0;
+  }
+
+  .nav > .menu,
+  .nav > .container input[type="checkbox"] {
+    display: none;
+  }
+
+  .nav > .container input[type="checkbox"]:checked ~ .list {
+    max-height: 400px;
+  }
+
+  .nav > .container input[type="checkbox"]:checked ~ p span {
+    transform: rotate(270deg);
+  }
+
+  /* Nav end */
+  /* ------------------- */
+  /* Space start */
+
+  .space {
+    width: 100%;
+    background-color: var(--colorPrimary);
+    text-align: center;
+    padding-block: 3rem;
+  }
+
+  .space h1 {
+    font-size: 1.5rem;
+    letter-spacing: 0.25rem;
+  }
+
+  /* Space end */
+  /* ---------------------- */
+  /* Content start */
+
+  .container {
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    height: calc(6rem + 1248px + 4rem);
+    gap: 1rem;
+  }
+
+  .main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    overflow-y: hidden;
+    scroll-snap-type: none;
+  }
+
+  .main::-webkit-scrollbar {
+    display: none;
+  }
+
+  .main > .content {
+    scroll-snap-align: unset;
+    padding: 0.5rem;
+    display: grid;
+    gap: 0.5rem;
+    height: 220px;
+    overflow-y: hidden;
+  }
+
+  .main > .content img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+    display: block;
+    background-color: var(--colorSecondary);
+    border-radius: 5px 5px 0 0;
+    object-fit: cover;
+  }
+
+  .main > .content > .wrapper p {
+    font-size: 0.85rem;
+    margin-block-start: 0.5rem;
+  }
+
+  .side {
+    display: grid;
+    grid-template-rows: max-content;
+    gap: 1rem;
+  }
+
+  .side > .category {
+    display: none;
+    background-color: var(--colorPrimary0-25);
+    padding: 2.5rem;
+  }
+
+  .side > .category > h3 {
+    letter-spacing: 0.05rem;
+  }
+
+  .side > .category > .menu {
+    margin-block: 1rem;
+  }
+
+  .side > .category > .menu > * {
+    display: block;
+    padding-block: 1rem;
+    color: var(--textColor);
+    text-decoration: none;
+    letter-spacing: 0.05rem;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.25);
+  }
+
+  .side > form {
+    width: 100%;
+  }
+
+  .side > form > label {
+    position: relative;
+  }
+
+  .side > form > label > span > img {
+    position: absolute;
+    width: 25px;
+    aspect-ratio: 1/1;
+    right: 1rem;
+    transform: translateY(0.35rem);
+  }
+
+  .side > form > label > input {
+    width: 100%;
+    height: 3rem;
+    padding: 1rem;
+  }
+
+  .side > .topPost {
+    display: grid;
+    grid-template-rows: max-content;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: var(--colorPrimary0-25);
+  }
+
+  .side > .topPost > h3 {
+    padding: 1rem;
+  }
+
+  .side > .topPost > .content {
+    display: grid;
+    gap: 0.25rem;
+    padding: 1rem;
+  }
+
+  .side > .topPost > .content .wrapper {
+    display: grid;
+    grid-template-columns: 0.5fr 3fr;
+  }
+
+  .side > .topPost > .content .wrapper h1 {
+    align-self: center;
+  }
+
+  .side > .topPost > .content .wrapper p {
+    font-size: 100%;
+    line-height: 1rem;
+    align-self: center;
+  }
+
+  .side > .gallery {
+    display: none;
+    gap: 1rem;
+  }
+
+  .side > .gallery .content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.25rem;
+  }
+
+  .side > .gallery img {
+    display: block;
+    background-color: var(--colorPrimary);
+    aspect-ratio: 1/1;
+    object-fit: cover;
+  }
+
+  /* Content end */
+  /* ---------------------- */
+  /* Pagination start */
+
+  .pagination {
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .pagination > * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--textColor);
+    width: 1.5rem;
+    height: 1.5rem;
+    text-decoration: none;
+    padding: 0.25rem;
+    background-color: var(--colorPrimary0-25);
+  }
+
+  .pagination > a:first-child {
+    color: var(--textColorSecondary);
+    background-color: var(--colorSecondary);
+  }
+
+  /* Pagination end */
+  /* -------------------------- */
+  /* Footer start */
+
+  .footer {
+    margin-block-start: 6rem;
+    background-color: var(--colorSecondary);
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    color: var(--textColorSecondary);
+    gap: 1.5rem;
+  }
+
+  .footer .brand {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .footer .brand h2 {
+    letter-spacing: 0.25rem;
+  }
+
+  .footer .brand > p {
+    align-self: start;
+    font-size: 75%;
+  }
+
+  .footer > .post {
+    display: grid;
+    gap: 1rem;
+    grid-row: 1;
+  }
+
+  .footer > .post .content {
+    display: grid;
+    gap: 0.5rem;
+    font-size: 75%;
+  }
+
+  .footer > .post > .content .wrapper {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 1rem;
+  }
+
+  .footer > .post > .content img,
+  .footer > .contact > .wrapper > .socialMedia img {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(334deg);
+  }
+
+  .footer > .contact {
+    display: grid;
+    gap: 0.5rem;
+    grid-row: 2;
+  }
+
+  .footer > .contact > .wrapper {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .footer > .contact > .wrapper > .socialMedia {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .footer > .contact {
+    font-size: 75%;
+  }
+
+  /* Footer end */
+}
